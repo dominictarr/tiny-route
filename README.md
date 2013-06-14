@@ -2,7 +2,7 @@
 
 Tiniest routing library.
 
-Routes on a regular expression and calls a handler.
+Routes on a regular expression or a string and calls a handler.
 `route(rx, handler(req, res, next))`
 
 # example
@@ -16,6 +16,9 @@ http.createServer(Stack(
     console.log('accessed user', req.params)
     req.end('hello', req.params[0])
     //and so on.
+  }),
+  route('/index.html', function (req, res) {
+    res.end('<!DOCTYPE html><h1>Hello World!</h1>')
   })
 ))
 ```
