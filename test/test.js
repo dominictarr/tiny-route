@@ -1,6 +1,6 @@
 var assert = require('assert')
 
-var route = require('./')
+var route = require('../')
 
 var called = 0
 
