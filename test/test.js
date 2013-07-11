@@ -35,4 +35,23 @@ handler3({url: '/test', method: 'GET'}, {end: function (data) {
   called ++
 }})
 
-assert.equal(called, 3)
+var handler4 = route.get(function (url, headers) {
+  return headers.host === 'helloworld.com'
+}, function (req, res) {
+  res.end(req.headers.host)
+})
+
+handler4({
+  url: '/test',
+  method: 'GET',
+  headers: {
+    host: 'helloworld.com'
+  }
+}, {end: function (data) {
+  console.log(data)
+  assert.equal(data, 'helloworld.com')
+  called ++
+}})
+
+
+assert.equal(called, 4)
