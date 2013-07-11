@@ -4,12 +4,19 @@ function error(req, res) {
   }
 }
 var route = module.exports = function (rx, handler, _next) {
-  rx = 'string' === typeof rx ? new RegExp('^'+rx) : rx
+  var test = (
+    'string'   === typeof rx ? new RegExp('^'+ rx)
+  : 'function' === typeof rx ? {exec: rx}
+  :                            rx
+  )
+
   return function (req, res, next) {
-    var m = rx.exec(req.url)
+    var m = test.exec(req.url, req.headers || {})
     if(!m) return (next || _next || error(req, res))()
-    req.url = req.url.substring(m[0].length)
-      
+
+    if(m[0])
+      req.url = req.url.substring(m[0].length)
+
     req.params = [].slice.call(m, 1)
     handler(req, res, next || _next)
   }
