@@ -1,7 +1,7 @@
 {
   "name": "tiny-route",
   "description": "Tiniest HTTP routing library",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "homepage": "https://github.com/dominictarr/tiny-route",
   "repository": {
     "type": "git",
