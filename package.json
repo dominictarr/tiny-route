@@ -1,19 +1,17 @@
 {
   "name": "tiny-route",
   "description": "Tiniest HTTP routing library",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "homepage": "https://github.com/dominictarr/tiny-route",
   "repository": {
     "type": "git",
     "url": "git://github.com/dominictarr/tiny-route.git"
   },
-  "dependencies": {
-  },
-  "devDependencies": {
-  },
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
   },
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
-  "license": "MIT"  
+  "license": "MIT"
 }
