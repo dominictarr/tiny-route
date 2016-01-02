@@ -9,7 +9,8 @@ Routes on a regular expression or a string and calls a handler.
 
 ``` js
 var Stack = require('stack')
-var http  = require('stack')
+var http  = require('http')
+var route = require('tiny-route')
 
 http.createServer(Stack(
   route(/\/users/(\w+)/, function (req, res, next) {
